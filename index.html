@@ -43,7 +43,6 @@
             transform: translateX(-50%);
             margin: 0 auto;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
             overflow: hidden;
             background: #fff;
             z-index: 999;
@@ -58,18 +57,13 @@
             animation: fade 1.5s ease-in-out;
         }
 
-        /* @keyframes fade {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        } */
-
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
             width: auto;
             padding: 15px;
-            color: rgb(255, 255, 255);
+            color: #fff;
             font-weight: bold;
             font-size: 24px;
             transition: 0.4s ease;
@@ -86,195 +80,193 @@
             background-color: transparent;
         }
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    margin-top: 220px; /* Adjusted for the fixed slideshow */
-}
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 220px;
+        }
 
-.card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 320px;
-    position: relative;
-}
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 320px;
+            position: relative;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(34, 30, 30, 0.15);
-}
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(34, 30, 30, 0.15);
+        }
 
-.card-img-container {
-    width: 100%;
-    height: 60%;
-    overflow: hidden;
-    position: relative;
-}
+        .card-img-container {
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            position: relative;
+        }
 
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    border-radius: 10px;
-}
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            border-radius: 10px;
+        }
 
-.card:hover .card-img {
-    transform: scale(1.1);
-}
+        .card:hover .card-img {
+            transform: scale(1.1);
+        }
 
-.card-content {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
+        .card-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
 
-.card-title {
-    margin: 0 0 10px;
-    font-size: 1.2em;
-    color: #0e0000;
-    font-weight: 600;
-    margin-top: 10px;
-}
+        .card-title {
+            margin: 0 0 10px;
+            font-size: 2.5em;
+            color: #0e0000;
+            font-weight: 600;
+            margin-top: 10px;
+        }
 
-.card-btn {
-    background-color: #292075;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
-    align-self: center;
-    margin-top: auto;
-    width: 80%;
-}
+        .card-btn {
+            background-color: #00B5EF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            align-self: center;
+            margin-top: auto;
+            width: 80%;
+        }
 
-.card-btn:hover {
-    background-color: #005291;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 103, 172, 0.3);
-}
+        .card-btn:hover {
+            background-color: #005291;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 103, 172, 0.3);
+        }
 
-.loader {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid #0067ac;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+        .loader {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #0067ac;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
 
-@media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 15px;
-        margin-top: 180px; /* Adjusted for smaller screens */
-    }
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 15px;
+                margin-top: 180px;
+            }
 
-    .card {
-        height: 300px;
-    }
+            .card {
+                height: 300px;
+            }
 
-    .card-img-container {
-        height: 55%;
-    }
+            .card-img-container {
+                height: 100%;
+            }
 
-    .card-title {
-        font-size: 1.1em;
-    }
+            .card-title {
+                font-size: 2.1em;
+            }
 
-    .card-btn {
-        padding: 10px 18px;
-        font-size: 13px;
-        width: 90%;
-    }
-}
+            .card-btn {
+                padding: 10px 18px;
+                font-size: 13px;
+                width: 90%;
+            }
+        }
 
-@media (max-width: 480px) {
-    .card-container {
-        grid-template-columns: 1fr;
-        margin-top: 160px; /* Further adjusted for mobile screens */
-    }
+        @media (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr;
+                margin-top: 160px;
+            }
 
-    .card {
-        height: 280px;
-    }
+            .card {
+                height: 280px;
+            }
 
-    .card-img-container {
-        height: 50%;
-    }
+            .card-img-container {
+                height: 100%;
+            }
 
-    .card-title {
-        font-size: 1em;
-    }
+            .card-title {
+                font-size: 1.1em;
+            }
 
-    .card-btn {
-        padding: 10px 16px;
-        font-size: 12px;
-        width: 100%;
-    }
-}
+            .card-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+                width: 100%;
+            }
+        }
 
-/* Special styling for the "Apply New Card" */
-.card-apply-new-card {
-    grid-column: 1 / -1; /* Span full width on all screen sizes */
-    max-width: none;
-    height: auto;
-    margin-bottom: 20px;
-}
+        .card-apply-new-card {
+            grid-column: 1 / -1;
+            max-width: none;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-@media (min-width: 769px) {
-    .card-apply-new-card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        height: 160px;
-    }
+        @media (min-width: 769px) {
+            .card-apply-new-card {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                height: 160px;
+            }
 
-    .card-apply-new-card .card-img-container {
-        height: 80%;
-    }
+            .card-apply-new-card .card-img-container {
+                height: 80%;
+            }
 
-    .card-apply-new-card .card-content {
-        padding: 20px;
-    }
+            .card-apply-new-card .card-content {
+                padding: 20px;
+            }
 
-    .card-apply-new-card .card-title {
-        font-size: 1.5em;
-    }
+            .card-apply-new-card .card-title {
+                font-size: 1.5em;
+            }
 
-    .card-apply-new-card .card-btn {
-        width: auto;
-        padding: 15px 30px;
-        font-size: 16px;
-    }
-}
-
+            .card-apply-new-card .card-btn {
+                width: auto;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,17 +279,16 @@
             <img src="src/image1.jpg" alt="Image 1" style="width:100%">
         </div>
         <div class="slide">
-            <img src="src/image2.jpg" alt="Image 2" style="width:100%">
+            <img src="src/image2.jpeg" alt="Image 2" style="width:100%">
         </div>
         <div class="slide">
-            <img src="src/image3.png" alt="Image 3" style="width:100%">
+            <img src="src/image3.jpeg" alt="Image 3" style="width:100%">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
     <div class="card-container">
-        <!-- Card 1 with top margin -->
         <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
@@ -309,8 +300,7 @@
             </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card">
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
@@ -320,9 +310,8 @@
                 <div class="loader"></div>
             </div>
         </div>
-        
-        <!-- Card 3 -->
-        <div class="card">
+
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
@@ -332,9 +321,8 @@
                 <div class="loader"></div>
             </div>
         </div>
-        
-        <!-- Card 4 -->
-        <div class="card">
+
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
@@ -344,21 +332,19 @@
                 <div class="loader"></div>
             </div>
         </div>
-        
-        <!-- Card 5 -->
-        <div class="card">
+
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
             <div class="card-content">
-                <h2 class="card-title">Separate MRP</h2>
+                <h2 class="card-title">Seprate Merged Card</h2>
                 <button class="card-btn" onclick="animateButton(this, 'data.html')">Click Here</button>
                 <div class="loader"></div>
             </div>
         </div>
-        
-        <!-- Card 6 -->
-        <div class="card">
+
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
@@ -369,8 +355,7 @@
             </div>
         </div>
 
-        <!-- Card 7 -->
-        <div class="card">
+        <div class="card card-apply-new-card">
             <div class="card-img-container">
                 <img src="src/card.png" alt="Card image" class="card-img">
             </div>
@@ -380,53 +365,29 @@
                 <div class="loader"></div>
             </div>
         </div>
-    </div>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            const slides = document.getElementsByClassName("slide");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+        <script>
+            let slideIndex = 0;
+        
+            function showSlides() {
+                const slides = document.getElementsByClassName('slide');
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = 'none';
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = 'block';
+                setTimeout(showSlides, 2500); // Change image every 3 seconds
             }
-            slides[slideIndex-1].style.display = "block";  
-        }
-
-        function showSlidesAuto() {
-            let i;
-            const slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlidesAuto, 2000); // Change image every 3 seconds
-        }
-
-        showSlidesAuto(); 
-
-        function animateButton(button, url) {
-            const loader = button.parentElement.querySelector('.loader');
-            loader.style.display = 'block';
-            button.classList.add('animate');
-            setTimeout(() => {
-                window.location.href = url;
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                    button.classList.remove('animate');
-                }, 500); // Hide loader after 1 second
-            }, 500); // Delay the page redirection by 1 second
-        }
-    </script>
+        
+            // Initial setup
+            document.addEventListener("DOMContentLoaded", function () {
+                showSlides();
+            });
+        </script>
+        
 </body>
 </html>
