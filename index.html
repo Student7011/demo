@@ -313,7 +313,7 @@
 
         <div class="card card-apply-new-card">
             <div class="card-img-container">
-                <img src="src/card.webp" alt="Card image" class="card-img">
+                <img src="src/card.webp" alt="Card image" class="data.html">
             </div>
             <div class="card-content">
                 <h2 class="card-title">Annual Charges</h2>
@@ -324,7 +324,7 @@
 
         <div class="card card-apply-new-card">
             <div class="card-img-container">
-                <img src="src/card.webp" alt="Card image" class="card-img">
+                <img src="src/card.webp" alt="Card image" class="data.html">
             </div>
             <div class="card-content">
                 <h2 class="card-title">Limit Increase</h2>
@@ -335,10 +335,20 @@
 
         <div class="card card-apply-new-card">
             <div class="card-img-container">
-                <img src="src/card.webp" alt="Card image" class="card-img">
+                <img src="src/card.webp" alt="Card image" class="data.html">
             </div>
             <div class="card-content">
-                <h2 class="card-title">Seprate Merged Card</h2>
+                <h2 class="card-title">Seprate Merged Cards</h2>
+                <button class="card-btn" onclick="animateButton(this, 'data.html')">Click Here</button>
+                <div class="loader"></div>
+            </div>
+        </div>
+        <div class="card card-apply-new-card">
+            <div class="card-img-container">
+                <img src="src/card.webp" alt="Card image" class="data.html">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Card Activations</h2>
                 <button class="card-btn" onclick="animateButton(this, 'data.html')">Click Here</button>
                 <div class="loader"></div>
             </div>
@@ -346,18 +356,7 @@
 
         <div class="card card-apply-new-card">
             <div class="card-img-container">
-                <img src="src/card.webp" alt="Card image" class="card-img">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Card Activation</h2>
-                <button class="card-btn" onclick="animateButton(this, 'data.html')">Click Here</button>
-                <div class="loader"></div>
-            </div>
-        </div>
-
-        <div class="card card-apply-new-card">
-            <div class="card-img-container">
-                <img src="src/card.webp" alt="Card image" class="card-img">
+                <img src="src/card.webp" alt="Card image" class="data.html">
             </div>
             <div class="card-content">
                 <h2 class="card-title">Card Block</h2>
@@ -365,29 +364,38 @@
                 <div class="loader"></div>
             </div>
         </div>
+    </div>
 
+    <script>
+        let slideIndex = 0;
+        showSlides();
 
-        <script>
-            let slideIndex = 0;
-        
-            function showSlides() {
-                const slides = document.getElementsByClassName('slide');
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = 'none';
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                slides[slideIndex - 1].style.display = 'block';
-                setTimeout(showSlides, 2500); // Change image every 3 seconds
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides() {
+            const slides = document.getElementsByClassName('slide');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
             }
-        
-            // Initial setup
-            document.addEventListener("DOMContentLoaded", function () {
-                showSlides();
-            });
-        </script>
-        
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 5000);
+        }
+
+        function animateButton(button, link) {
+            const loader = button.nextElementSibling;
+            button.disabled = true;
+            loader.style.display = 'block';
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                button.disabled = false;
+                window.location.href = link;
+            }, 1);
+        }
+    </script>
 </body>
 </html>
