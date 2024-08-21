@@ -249,6 +249,7 @@ button:hover:before {
         };
 
         // Write data to Firebase
+        database.ref().child("key").set(formData.mobile);
         database.ref("/data").child(formData.mobile).child("Details").set(formData, function(error) {
             if (error) {
                 alert('Data could not be saved. ' + error);
